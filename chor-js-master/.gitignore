@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+dist
+*.log
+.idea/
+Gemfile.lock
+_site
+.cache
+.karma-parcel
+.karma-parcel-cache
+test/.test-cache
+test/.test-bin

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 2000 2000"
+   height="2000"
+   width="2000"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="hide-message.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1147"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="0.32"
+     inkscape:cx="935.82723"
+     inkscape:cy="843.09074"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <cc:license
+           rdf:resource="https://github.com/bpmn-io/bpmn-font/blob/master/LICENSE" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jörg Dotzki</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>BPMN</rdf:li>
+            <rdf:li>bpmn-io</rdf:li>
+            <rdf:li>bpmn.io</rdf:li>
+            <rdf:li>Font</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     id="layer2">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:140.27900696;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.13333321;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 886.33984 430.00586 A 70.146517 70.146517 0 1 0 886.33984 570.28516 L 1119.4629 570.28516 A 70.146517 70.146517 0 1 0 1119.4629 430.00586 L 886.33984 430.00586 z M 155.23242 430.00781 L 155.23242 800.69141 C 154.68502 839.81231 186.24835 871.81836 225.37305 871.81836 C 264.49786 871.81836 296.05912 839.81231 295.51172 800.69141 L 295.51172 570.28711 L 525.91602 570.28711 C 565.45602 570.84654 597.64318 538.6293 597.04688 499.08984 C 596.46327 460.37882 564.62752 429.46011 525.91602 430.00781 L 155.23242 430.00781 z M 1479.8945 430.00781 C 1441.183 429.46011 1409.3473 460.37882 1408.7637 499.08984 C 1408.1674 538.62931 1440.3545 570.84654 1479.8945 570.28711 L 1710.2988 570.28711 L 1710.2988 800.69141 C 1709.7514 839.81231 1741.3147 871.81836 1780.4395 871.81836 C 1819.5642 871.81836 1851.1255 839.81231 1850.5781 800.69141 L 1850.5781 430.00781 L 1479.8945 430.00781 z M 726.17578 761.47852 A 70.146517 70.146517 0 0 0 688.73047 890.76562 L 987.94336 1087.6152 L 1287.1562 890.76562 A 70.146517 70.146517 0 1 0 1210.0566 773.57422 L 987.94336 919.70117 L 765.83203 773.57422 A 70.146517 70.146517 0 0 0 726.17578 761.47852 z M 224.30859 1130.4531 C 185.59757 1131.0367 154.67886 1162.8725 155.22656 1201.584 L 155.22656 1572.2676 L 525.91016 1572.2676 C 565.03108 1572.815 597.03906 1541.2536 597.03906 1502.1289 C 597.03906 1463.0041 565.03108 1431.4409 525.91016 1431.9883 L 295.50586 1431.9883 L 295.50586 1201.584 C 296.06529 1162.044 263.84805 1129.8568 224.30859 1130.4531 z M 1781.5039 1130.4531 C 1741.9644 1129.8568 1709.7472 1162.044 1710.3066 1201.584 L 1710.3066 1431.9883 L 1479.9023 1431.9883 C 1440.7814 1431.4409 1408.7734 1463.0041 1408.7734 1502.1289 C 1408.7734 1541.2536 1440.7814 1572.815 1479.9023 1572.2676 L 1850.5859 1572.2676 L 1850.5859 1201.584 C 1851.1336 1162.8725 1820.2149 1131.0367 1781.5039 1130.4531 z M 886.33984 1431.9824 A 70.146517 70.146517 0 1 0 886.33984 1572.2617 L 1119.4629 1572.2617 A 70.146517 70.146517 0 1 0 1119.4629 1431.9824 L 886.33984 1431.9824 z "
+       id="path6161" />
+  </g>
+</svg>
