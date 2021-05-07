@@ -72,7 +72,7 @@ ReplaceMenuProvider.prototype.getEntries = function(element) {
     ]));
     return this._createEntries(element, entries);
   }
-
+  
   // boundary events
   if (is(businessObject, 'bpmn:BoundaryEvent')) {
     entries = replaceOptions.BOUNDARY_EVENT.filter(differentType).filter(isInTargets([

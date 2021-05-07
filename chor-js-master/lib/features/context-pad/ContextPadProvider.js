@@ -297,7 +297,7 @@ ContextPadProvider.prototype.getContextPadEntries = function(element) {
 
   // --------------------------------------------------------------------------------------------
   // replace menu for sequence flows, events, gateways, etc.
-  if (!self._popupMenu.isEmpty(element, 'chor-replace')) {
+  if (!self._popupMenu.isEmpty(element, 'chor-replace') && !is(businessObject, 'bpmn:Participant')) {
     assign(actions, {
       'replace': {
         group: 'edit',
