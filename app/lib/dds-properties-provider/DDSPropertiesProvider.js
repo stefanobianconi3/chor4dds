@@ -64,8 +64,15 @@ function getNameOptions(element) {
       };
       IdProps(generalGroup, element, translate, getIdOptions(element));
       NameProps(generalGroup, element, bpmnFactory, canvas, translate, getNameOptions(element));
-      DomainIdProps(generalGroup, element, translate);
+      
      
+
+      var domainParticipantGroup= {
+        id: 'dp',
+        label: translate('Domain Participant'),
+        entries: []
+      };
+      DomainIdProps(domainParticipantGroup, element, translate);
 
       var dataTypesGroup= {
         id: 'forms',
@@ -86,6 +93,7 @@ function getNameOptions(element) {
       var groups = [];
       groups.push(generalGroup);
       groups.push(dataTypesGroup);
+      groups.push(domainParticipantGroup)
       groups.push(documentationGroup);
       return groups;
     
