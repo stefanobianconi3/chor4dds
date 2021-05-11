@@ -4,6 +4,7 @@ import DomainIdProps from './parts/DomainIdProps'
 import {is} from 'bpmn-js/lib/util/ModelUtil';
 import IdProps from './parts/IdProps';
 import NameProps from './parts/NameProps';
+import FilterProps from './parts/FilterProps'
 import DataTypeProps from './parts/DataTypeProps';
 import DurabilityProps from './parts/QualityOfService/DurabilityProps'
 import DeadlineProps from './parts/QualityOfService/DeadlineProps'
@@ -13,6 +14,7 @@ import LivelinessProps from './parts/QualityOfService/LivelinessProps'
 import ReliabilityProps from './parts/QualityOfService/ReliabilityProps'
 import HistoryProps from './parts/QualityOfService/HistoryProps'
 import DestinationOrderProps from './parts/QualityOfService/DestinationOrderProps'
+
 var inherits = require('inherits');
 var PropertiesActivator = require('bpmn-js-properties-panel/lib/PropertiesActivator');
 var documentationProps = require('bpmn-js-properties-panel/lib/provider/bpmn/parts/DocumentationProps');
@@ -81,6 +83,14 @@ function getNameOptions(element) {
       };
       DataTypeProps(dataTypesGroup, element, bpmnFactory, translate);
 
+
+      var filterTopicGroup= {
+        id: 'filter',
+        label: translate('Filter Topic'),
+        entries: []
+      };
+      FilterProps(filterTopicGroup, element, bpmnFactory, translate);
+
       var documentationGroup = {
         id: 'documentation',
         label: translate('Documentation'),
@@ -93,7 +103,8 @@ function getNameOptions(element) {
       var groups = [];
       groups.push(generalGroup);
       groups.push(dataTypesGroup);
-      groups.push(domainParticipantGroup)
+      groups.push(domainParticipantGroup);
+      groups.push(filterTopicGroup);
       groups.push(documentationGroup);
       return groups;
     

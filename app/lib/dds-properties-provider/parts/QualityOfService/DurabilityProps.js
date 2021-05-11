@@ -15,7 +15,7 @@ module.exports = function(group, element, translate) {
       label : 'DURABILITY',
       description: 'Expresses if the data should outlive their writing time',
       selectOptions: [
-        {name: 'VOLATILE', value: ''},
+        {name: 'VOLATILE', value: 'volatile'},
         {name: 'TRANSIENT_LOCAL', value: 'transient_local'},
         {name: 'TRANSIENT', value: 'transient'},
         {name: 'PERSISTENT', value: 'persistent'}
@@ -25,10 +25,13 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qosdurability: bo.get('qosdurability')};
+        if(!bo.get('qosdurability')){
+          bo.qosdurability = 'volatile'
+        return {qosdurability: 'volatile'};
         }
-        else return {};
+        if(bo.get('qosdurability')){
+          return {qosdurability: bo.get('qosdurability')};
+          }
     },
 
     set: function (element, values) {

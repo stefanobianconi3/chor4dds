@@ -17,7 +17,7 @@ module.exports = function(group, element, translate) {
       label : 'HISTORY',
       description: 'Controls the delivery of values',
       selectOptions: [
-        {name: 'KEEP LAST', value: ''},
+        {name: 'KEEP LAST', value: 'keep_last'},
         {name: 'KEEP ALL', value: 'keep_all'}
     ],
       modelProperty : 'qoshistory',
@@ -25,10 +25,13 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qoshistory: bo.get('qoshistory')};
+        if(!bo.get('qoshistory')){
+          bo.qoshistory = 'keep_last'
+        return {qoshistory: 'keep_last'};
         }
-        else return {};
+        if(bo.get('qoshistory')){
+          return {qoshistory: bo.get('qoshistory')};
+          }
     },
 
     set: function (element, values) {

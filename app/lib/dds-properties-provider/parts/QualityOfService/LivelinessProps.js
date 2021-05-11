@@ -16,7 +16,7 @@ module.exports = function(group, element, translate) {
       label : 'LIVELINESS',
       description: 'Determines the mechanism to determine whether an Entity is alive.',
       selectOptions: [
-        {name: 'AUTOMATIC', value: ''},
+        {name: 'AUTOMATIC', value: 'automatic'},
         {name: 'MANUAL BY PARTICIPANT', value: 'manual_by_participant'},
         {name: 'MANUAL BY TOPIC', value: 'manual_by_topic'}
     ],
@@ -25,11 +25,14 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qosliveliness: bo.get('qosliveliness')};
-        }
-        else return {};
-    },
+          if(!bo.get('qosliveliness')){
+            bo.qosliveliness = 'automatic'
+          return {qosliveliness: 'automatic'};
+          }
+          if(bo.get('qosliveliness')){
+            return {qosliveliness: bo.get('qosliveliness')};
+            }
+      },
 
     set: function (element, values) {
         var bo = getBusinessObject(element);
@@ -46,13 +49,16 @@ group.entries.push(entryFactory.textField(translate, {
     label : 'Lease Duration (seconds)',
     modelProperty : 'qosleaseduration',
     get: function (element, node) {
-        var bo = getBusinessObject(element);
-        if(!bo.get('qosleaseduration')){
-            return {qosleaseduration: 'INFINITY'};
-        }  
-        if(bo){
+      var bo = getBusinessObject(element);
+      if(!bo.get('qosleaseduration')){
+        bo.qosleaseduration = 'INFINITY'
+      return {qosleaseduration: 'INFINITY'};
+      }
+      if(bo.get('qosleaseduration')){
         return {qosleaseduration: bo.get('qosleaseduration')};
-        }},
+        }
+  },
+
     
         set: function (element, node) {
             var bo = getBusinessObject(element);

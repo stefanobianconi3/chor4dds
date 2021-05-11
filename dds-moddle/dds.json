@@ -975,11 +975,29 @@
       {
         "name": "DomainParticipantId",
         "extends": [
-          "bpmn:Task"
+          "bpmn:ChoreographyTask"
         ],
         "properties": [
           {
             "name": "dp",
+            "isAttr": true,
+            "type": "String"
+          }
+        ]
+      },
+      {
+        "name": "filterExpression",
+        "extends": [
+          "bpmn:ChoreographyTask"
+        ],
+        "properties": [
+          {
+            "name": "FilterInitiating",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "FilterReceiver",
             "isAttr": true,
             "type": "String"
           }

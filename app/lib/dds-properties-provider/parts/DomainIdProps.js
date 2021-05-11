@@ -18,9 +18,10 @@ module.exports = function(group, element, translate) {
         var bo = getBusinessObject(element);
         
         if(!bo.get('dp')){
+          bo.dp = '0';
             return {dp: '0'};
         }  
-        if(bo){
+        if(bo.get('dp')){
         return {dp: bo.get('dp')};
         }},
     

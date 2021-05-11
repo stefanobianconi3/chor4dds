@@ -15,9 +15,10 @@ module.exports = function(group, element, translate) {
         get: function (element, node) {
           var bo = getBusinessObject(element);
           if(!bo.get('qosdeadline')){
+            bo.qosdeadline = 'INFINITY';
               return {qosdeadline: 'INFINITY'};
           }  
-          if(bo){
+          if(bo.get('qosdeadline')){
           return {qosdeadline: bo.get('qosdeadline')};
           }},
       

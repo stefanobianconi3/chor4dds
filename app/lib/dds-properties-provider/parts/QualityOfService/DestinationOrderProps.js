@@ -17,7 +17,7 @@ module.exports = function(group, element, translate) {
       label : 'DESTINATION ORDER',
       description: 'Controls the order in which samples within are made available ',
       selectOptions: [
-        {name: 'BY RECEPTION TIMESTAMP', value: ''},
+        {name: 'BY RECEPTION TIMESTAMP', value: 'by_reception_timestamp'},
         {name: ' BY SOURCE TIMESTAMP', value: 'by_source_timestamp'}
     ],
       modelProperty : 'qosdestinationorder',
@@ -25,10 +25,13 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qosdestinationorder: bo.get('qosdestinationorder')};
+        if(!bo.get('qosdestinationorder')){
+          bo.qosdestinationorder = 'by_reception_timestamp'
+        return {qosdestinationorder: 'by_reception_timestamp'};
         }
-        else return {};
+        if(bo.get('qosdestinationorder')){
+          return {qosdestinationorder: bo.get('qosdestinationorder')};
+          }
     },
 
     set: function (element, values) {

@@ -15,7 +15,7 @@ module.exports = function(group, element, translate) {
       label : 'OWNERSHIP',
       description: 'Specifies whether it is allowed for multiple DataWriters to write the same instance of the data',
       selectOptions: [
-        {name: 'SHARED', value: ''},
+        {name: 'SHARED', value: 'shared'},
         {name: 'EXCLUSIVE', value: 'exclusive'}
     ],
       modelProperty : 'qosownership',
@@ -23,10 +23,13 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qosownership: bo.get('qosownership')};
+        if(!bo.get('qosownership')){
+          bo.qosownership = 'shared'
+        return {qosownership: 'shared'};
         }
-        else return {};
+        if(bo.get('qosownership')){
+          return {qosownership: bo.get('qosownership')};
+          }
     },
 
     set: function (element, values) {

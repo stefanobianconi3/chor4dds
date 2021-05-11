@@ -16,7 +16,7 @@ module.exports = function(group, element, translate) {
       label : 'RELIABILITY',
       description: 'Level of reliability offered/requested by the Service',
       selectOptions: [
-        {name: 'BEST EFFORT', value: ''},
+        {name: 'BEST EFFORT', value: 'best_effort'},
         {name: 'RELIABLE', value: 'reliable'}
     ],
       modelProperty : 'qosreliability',
@@ -24,10 +24,13 @@ module.exports = function(group, element, translate) {
 
       get: function (element, node) {
         var bo = getBusinessObject(element);
-        if(bo){
-        return {qosreliability: bo.get('qosreliability')};
+        if(!bo.get('qosreliability')){
+          bo.qosreliability = 'best_effort'
+        return {qosreliability: 'best_effort'};
         }
-        else return {};
+        if(bo.get('qosreliability')){
+          return {qosreliability: bo.get('qosreliability')};
+          }
     },
 
     set: function (element, values) {
@@ -47,11 +50,13 @@ group.entries.push(entryFactory.textField(translate, {
     get: function (element, node) {
         var bo = getBusinessObject(element);
         if(!bo.get('qosmaxblockingtime')){
-            return {qosmaxblockingtime: 'INFINITY'};
-        }  
-        if(bo){
-        return {qosmaxblockingtime: bo.get('qosmaxblockingtime')};
-        }},
+          bo.qosmaxblockingtime = 'INFINITY'
+        return {qosmaxblockingtime: 'INFINITY'};
+        }
+        if(bo.get('qosmaxblockingtime')){
+          return {qosmaxblockingtime: bo.get('qosmaxblockingtime')};
+          }
+    },
     
         set: function (element, node) {
             var bo = getBusinessObject(element);
