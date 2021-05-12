@@ -138,7 +138,6 @@ InitialRenderVisitor.prototype.visit = function(element, parentShape) {
  */
 InitialRenderVisitor.prototype._registerDi = function(di) {
   let bpmnElement = di.bpmnElement;
-  console.log(bpmnElement)
   if (bpmnElement) {
     // do not link DIs for participants because they have more than one
     if (!is(bpmnElement, 'bpmn:Participant')) {
