@@ -10,6 +10,7 @@ import {
 
 import {
   assign,
+  has,
   omit
 } from 'min-dash';
 
@@ -28,6 +29,7 @@ import {
 
 import {
   createMessageShape,
+  getAttachedMessageShape,
   createMessageFlowSemantics,
   linkMessageFlowSemantics
 } from '../../util/MessageUtil';
@@ -98,9 +100,11 @@ InitialRenderVisitor.$inject = [
 ];
 
 InitialRenderVisitor.prototype.init = function(...parameters) {
+
 };
 
 InitialRenderVisitor.prototype.start = function(choreo, diagram) {
+  
   // load DI from selected diagram
   this._registerDi(diagram.plane);
   if (diagram.plane.planeElement) {
@@ -162,9 +166,8 @@ InitialRenderVisitor.prototype._add = function(semantic, parentShape) {
   let isMessageFlow = is(semantic, 'bpmn:MessageFlow');
   let isChoreoActivity = is(semantic, 'bpmn:ChoreographyActivity');
   let isChoreoTask = is(semantic, 'bpmn:ChoreographyTask');
-
+  let isMessageBand = is(semantic, 'bpmn:Message');
   let hasDI = !isMessageFlow;
-
   /*
    * Most semantic elements have an attached DI semantic object (diagram interchange) that
    * bounds, widths, heights, etc. However, some elements like messages do not but
@@ -174,6 +177,7 @@ InitialRenderVisitor.prototype._add = function(semantic, parentShape) {
     // get the DI object corresponding to this element
     let di;
     if (isParticipantBand) {
+    
       /*
       * For participant bands, the DI object is not as easy to get as there can
       * be multiple bands for the same semantic object (i.e., a bpmn:Participant).
@@ -352,35 +356,55 @@ InitialRenderVisitor.prototype._add = function(semantic, parentShape) {
     }
   } else {
     if (isMessageFlow) {
+      
       /*
        * Messages are attached to a participant band. They are separate shapes
        * but move with the band. They do not have an underlying DI element.
        * If no message is attached to the message flow, we first have to create one.
        */
       const choreo = this._canvas.getRootElement().businessObject;
+
+      
       const definitions = choreo.$parent;
       let message = semantic.messageRef;
+  
+      if (choreo.messages) {
+        if(!choreo.messages.includes(message)){
+          choreo.messages.push(message);
+        }
+      } else {
+        choreo.messages = [ message ];
+      }
+
       if (!message) {
         message = this._moddle.create('bpmn:Message');
         message.id = this._moddle.ids.nextPrefixed('Message_', message);
         definitions.rootElements.unshift(message);
         semantic.messageRef = message;
       }
+  
 
       if (this._elementRegistry.get(message.id)) {
+        //console.log('registry',this._elementRegistry.get(message.id))
+
         /*
          * A shape for this message has already been created. In that case, we
          * copy the message so that we do not have to deal with that when deleting
          * or unlinking them later.
          */
+      
         let newMessage = this._moddle.create('bpmn:Message', omit(message, ['id','$type','di']));
         newMessage.id = this._moddle.ids.nextPrefixed('Message_', newMessage);
-        definitions.rootElements.unshift(newMessage);
+        //definitions.rootElements.unshift(newMessage);
+        console.log(message)
         semantic.messageRef = newMessage;
+     
       }
 
       element = createMessageShape(this._injector, parentShape, semantic);
       this._canvas.addShape(element, parentShape);
+      
+ 
     }
   }
 
