@@ -396,15 +396,16 @@ InitialRenderVisitor.prototype._add = function(semantic, parentShape) {
         let newMessage = this._moddle.create('bpmn:Message', omit(message, ['id','$type','di']));
         newMessage.id = this._moddle.ids.nextPrefixed('Message_', newMessage);
         //definitions.rootElements.unshift(newMessage);
-        console.log(message)
         semantic.messageRef = newMessage;
-     
-      }
+        element = createMessageShape(this._injector, parentShape, semantic);
+        element.businessObject = message;
+        this._canvas.addShape(element, parentShape);
+
+      } else {
 
       element = createMessageShape(this._injector, parentShape, semantic);
       this._canvas.addShape(element, parentShape);
-      
- 
+      }
     }
   }
 
