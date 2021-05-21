@@ -1011,36 +1011,6 @@
         ],
         "properties": [
           {
-            "name": "qosdurability",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
-            "name": "qosdeadline",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
-            "name": "qoslatencybudget",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
-            "name": "qosownership",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
-            "name": "qosliveliness",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
-            "name": "qosleaseduration",
-            "isAttr": true,
-            "type": "String"
-          },
-          {
             "name": "qosreliability",
             "isAttr": true,
             "type": "String"
@@ -1051,12 +1021,50 @@
             "type": "String"
           },
           {
+            "name": "qosdurability",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "qosdeadline",
+            "isAttr": true,
+            "type": "String"
+          },
+         
+          {
+            "name": "qosownership",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "qosownershipstrength",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "qosliveliness",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "qoslivelinessduration",
+            "isAttr": true,
+            "type": "String"
+          },
+        
+          
+          {
             "name": "qoshistory",
             "isAttr": true,
             "type": "String"
           },
           {
-            "name": "qosdestinationorder",
+            "name": "qoshistorydepth",
+            "isAttr": true,
+            "type": "String"
+          },
+           {
+            "name": "qostimebasedfilter",
             "isAttr": true,
             "type": "String"
           }

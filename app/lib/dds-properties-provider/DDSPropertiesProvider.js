@@ -8,12 +8,12 @@ import FilterProps from './parts/FilterProps'
 import DataTypeProps from './parts/DataTypeProps';
 import DurabilityProps from './parts/QualityOfService/DurabilityProps'
 import DeadlineProps from './parts/QualityOfService/DeadlineProps'
-import LatencyBudgetProps from './parts/QualityOfService/LatencyBudgetProps'
+import TimeBasedFilter from './parts/QualityOfService/TimeBasedFilter'
 import OwnershipProps from './parts/QualityOfService/OwnershipProps'
 import LivelinessProps from './parts/QualityOfService/LivelinessProps'
 import ReliabilityProps from './parts/QualityOfService/ReliabilityProps'
 import HistoryProps from './parts/QualityOfService/HistoryProps'
-import DestinationOrderProps from './parts/QualityOfService/DestinationOrderProps'
+//import DestinationOrderProps from './parts/QualityOfService/DestinationOrderProps'
 
 var inherits = require('inherits');
 var PropertiesActivator = require('bpmn-js-properties-panel/lib/PropertiesActivator');
@@ -118,14 +118,17 @@ function getNameOptions(element) {
         label: translate('Quality of Service'),
         entries: []
       };
+      ReliabilityProps(qosGroup,element,bpmnFactory,translate);
      DurabilityProps(qosGroup, element, bpmnFactory, translate);
      DeadlineProps(qosGroup, element, translate);
-     LatencyBudgetProps(qosGroup,element,translate);
      OwnershipProps(qosGroup, element, bpmnFactory, translate);
+     
+     
      LivelinessProps(qosGroup,element,bpmnFactory, translate);
-     ReliabilityProps(qosGroup,element,bpmnFactory,translate);
+     
      HistoryProps(qosGroup,element,bpmnFactory,translate);
-     DestinationOrderProps(qosGroup,element,bpmnFactory,translate);
+     //DestinationOrderProps(qosGroup,element,bpmnFactory,translate);
+     TimeBasedFilter(qosGroup,element,translate);
       var groups = [];
       groups.push(qosGroup);
     

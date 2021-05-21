@@ -43,6 +43,32 @@ module.exports = function(group, element, translate) {
 
 }))
 
+group.entries.push(entryFactory.textField(translate, {
+  id : 'qoshistorydepth', //HTML properties
+  description : '',
+  label : 'History depth',
+  modelProperty : 'qoshistorydepth',
+  get: function (element, node) {
+    var bo = getBusinessObject(element);
+    if(!bo.get('qoshistorydepth')){
+      bo.qoshistorydepth = '1'
+    return {qoshistorydepth: '1'};
+    }
+    if(bo.get('qoshistorydepth')){
+      return {qoshistorydepth: bo.get('qoshistorydepth')};
+      }
+},
+
+  
+      set: function (element, node) {
+          var bo = getBusinessObject(element);
+          return cmdHelper.updateBusinessObject(element, bo, {
+              'qoshistorydepth': node.qoshistorydepth
+          });
+      }
+
+}))
+
 
 
 

@@ -44,18 +44,18 @@ module.exports = function(group, element, translate) {
 }))
 
 group.entries.push(entryFactory.textField(translate, {
-    id : 'qosleaseduration', //HTML properties
-    description : 'Liveliness Delay',
-    label : 'Lease Duration (seconds)',
-    modelProperty : 'qosleaseduration',
+    id : 'qoslivelinessduration', //HTML properties
+    description : 'Seconds',
+    label : 'Liveliness Lease Duration',
+    modelProperty : 'qoslivelinessduration',
     get: function (element, node) {
       var bo = getBusinessObject(element);
-      if(!bo.get('qosleaseduration')){
-        bo.qosleaseduration = 'INFINITY'
-      return {qosleaseduration: 'INFINITY'};
+      if(!bo.get('qoslivelinessduration')){
+        bo.qoslivelinessduration = 'INFINITY'
+      return {qoslivelinessduration: 'INFINITY'};
       }
-      if(bo.get('qosleaseduration')){
-        return {qosleaseduration: bo.get('qosleaseduration')};
+      if(bo.get('qoslivelinessduration')){
+        return {qoslivelinessduration: bo.get('qoslivelinessduration')};
         }
   },
 
@@ -63,7 +63,7 @@ group.entries.push(entryFactory.textField(translate, {
         set: function (element, node) {
             var bo = getBusinessObject(element);
             return cmdHelper.updateBusinessObject(element, bo, {
-                'qosleaseduration': node.qosleaseduration
+                'qoslivelinessduration': node.qoslivelinessduration
             });
         }
 

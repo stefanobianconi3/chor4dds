@@ -13,7 +13,7 @@ module.exports = function(group, element, translate) {
     group.entries.push(entryFactory.selectBox(translate, {
       id : 'qosownership', //HTML properties
       label : 'OWNERSHIP',
-      description: 'Specifies whether it is allowed for multiple DataWriters to write the same instance of the data',
+      description: 'Owner of the topic instance',
       selectOptions: [
         {name: 'SHARED', value: 'shared'},
         {name: 'EXCLUSIVE', value: 'exclusive'}
@@ -40,6 +40,36 @@ module.exports = function(group, element, translate) {
     }
 
 }))
+if (is(element, 'bpmn:ChoreographyTask')){
+group.entries.push(entryFactory.textField(translate, {
+  id : 'qosownershipstrength', //HTML properties
+  description : 'DataWriter strength',
+  label : 'OWNERSHIP Strength',
+  modelProperty : 'qosownershipstrength',
+  get: function (element, node) {
+    var bo = getBusinessObject(element);
+    if(!bo.get('qosownershipstrength')){
+      bo.qosownershipstrength = '0'
+    return {qosownershipstrength: '0'};
+    }
+    if(bo.get('qosownershipstrength')){
+      return {qosownershipstrength: bo.get('qosownershipstrength')};
+      }
+},
+
+  
+      set: function (element, node) {
+          var bo = getBusinessObject(element);
+          return cmdHelper.updateBusinessObject(element, bo, {
+              'qosownershipstrength': node.qosownershipstrength
+          });
+      }
+
+}))}
+
+
+
+
 }
 
 }
