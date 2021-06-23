@@ -41,7 +41,7 @@ module.exports = function(group, element, translate) {
     }
 
 }))
-
+/*
 group.entries.push(entryFactory.textField(translate, {
     id : 'qosmaxblockingtime', //HTML properties
     description : 'Realiability block time (seconds)',
@@ -66,6 +66,7 @@ group.entries.push(entryFactory.textField(translate, {
         }
 
   }))
+  */
 
 
 
