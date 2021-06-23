@@ -973,6 +973,19 @@
         ]
       },
       {
+        "name": "idlName",
+        "extends": [
+          "bpmn:Choreography"
+        ],
+        "properties": [
+          {
+            "name": "idlName",
+            "isAttr": true,
+            "type": "String"
+          }
+        ]
+      },
+      {
         "name": "DomainParticipantId",
         "extends": [
           "bpmn:ChoreographyTask"

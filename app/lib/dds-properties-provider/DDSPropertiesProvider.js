@@ -3,6 +3,7 @@
 import DomainIdProps from './parts/DomainIdProps'
 import {is} from 'bpmn-js/lib/util/ModelUtil';
 import IdProps from './parts/IdProps';
+import idlName from './parts/IdlName';
 import NameProps from './parts/NameProps';
 import FilterProps from './parts/FilterProps'
 import DataTypeProps from './parts/DataTypeProps';
@@ -66,6 +67,8 @@ function getNameOptions(element) {
       };
       IdProps(generalGroup, element, translate, getIdOptions(element));
       NameProps(generalGroup, element, bpmnFactory, canvas, translate, getNameOptions(element));
+      idlName(generalGroup, element, translate);
+      
       
      
 
