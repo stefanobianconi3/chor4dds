@@ -7,3 +7,6 @@ npm install
 
 npm run dev
 ```
+
+## Demo
+http://localhost:8080/
