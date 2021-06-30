@@ -7,6 +7,4 @@ npm install
 
 npm run dev
 ```
-
-## Demo
-http://localhost:8080/
+Go to localhost:8080 for Demo
